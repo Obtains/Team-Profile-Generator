@@ -1,0 +1,13 @@
+.employee-card {
+    background-color: blanchedalmond;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1rem;
+    border: none;
+}
+
+.team-heading {
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    border-radius: 0;
+}
