@@ -1,3 +1,4 @@
+// Dependencies
 const fs = require('fs');
 const path = require('path');
 const OUTPUT_DIR = path.resolve(__dirname, 'output');
@@ -11,7 +12,7 @@ const Intern = require('./lib/Intern');
 
 const employeeArray = [];
 
-const startData = () => {
+
     function addTeam () {
         inquirer.prompt([{
             type: 'list',
@@ -19,7 +20,8 @@ const startData = () => {
             name: 'addEmployeeData',
             choices: ['Manager', 'Engineer', 'Intern', 'Exit']
         }])
-        .then(userData) = () => {
+        // Fixed issue here with missing parentheses causing error with arrow keys in terminal
+        .then((userData) => {
             switch(userData.addEmployeeData) {
                 case 'Manager': addManager();
                 break;
@@ -30,7 +32,7 @@ const startData = () => {
 
                 default: builtTeam();
             }
-        }
+        })
     }
 
 
@@ -126,8 +128,5 @@ const builtTeam = () => {
     console.log('Team Created');
     fs.writeFileSync(outputPath, generateHTML(employeeArray), 'utf-8')
 };
+// Removed access unneeded function to make it cleaner
 addTeam();
-
-};
-
-startData();
